@@ -1,0 +1,158 @@
+/* Estilo base */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #3b2f2f;
+    background: url('imgs/freddie-marriage-p1Hlr3fdjTo-unsplash.jpg') center/cover no-repeat fixed; /* Fondo transparente */
+    overflow-x: hidden;
+}
+
+header {
+    text-align: center;
+    padding: 20px 10px;
+    background-color: rgba(210, 180, 140, 0.8); /* Fondo semi-transparente */
+    color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+/* Botón para volver al inicio - más sutil y pequeño */
+.back-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 5px 15px;
+    font-size: 0.9rem;
+    color: white;
+    background-color: rgba(92, 64, 51, 0.7);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.back-button:hover {
+    background-color: rgba(92, 64, 51, 1);
+    transform: scale(1.05); /* Efecto de agrandamiento sutil */
+}
+
+/* Contenedor principal */
+.container {
+    display: flex;
+    padding-top: 130px; /* Para evitar que el header tape contenido */
+    padding-bottom: 50px; /* Espacio para el pie de página */
+}
+
+/* Recuadros laterales */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    flex: 1;
+    padding: 10px;
+}
+
+.sidebar.left {
+    align-items: flex-start;
+}
+
+.sidebar.right {
+    align-items: flex-end;
+}
+
+.box {
+    width: 200px;
+    height: 200px;
+    margin: 10px 0;
+    border: 2px solid #d2b48c;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 1;
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Suaviza el efecto de desaparición */
+}
+
+.box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Recuadros desaparecen al hacer scroll */
+.sidebar .box {
+    opacity: 1; /* Aparecen por defecto */
+}
+
+.sidebar .box:nth-child(1) { transition-delay: 0s; }
+.sidebar .box:nth-child(2) { transition-delay: 0.1s; }
+.sidebar .box:nth-child(3) { transition-delay: 0.2s; }
+.sidebar .box:nth-child(4) { transition-delay: 0.3s; }
+.sidebar .box:nth-child(5) { transition-delay: 0.4s; }
+
+.sidebar .box.scrolled {
+    opacity: 0; /* Desaparece */
+    transform: translateY(-20px); /* Se mueve ligeramente hacia arriba */
+}
+
+/* Sección central */
+main.story {
+    flex: 2;
+    padding: 20px;
+    text-align: justify;
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 0 10px;
+    overflow-y: auto;
+}
+
+/* Estilo para el texto */
+main.story p {
+    font-size: 1.2rem;
+    margin: 15px 0;
+    line-height: 1.6;
+    color: #5c4033;
+}
+
+/* Pie de página - tamaño reducido */
+footer {
+    text-align: center;
+    padding: 5px 10px;
+    background-color: rgba(210, 180, 140, 0.8);
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+    .sidebar {
+        display: none; /* Oculta las barras laterales en pantallas pequeñas */
+    }
+
+    main.story {
+        flex: 1;
+    }
+}

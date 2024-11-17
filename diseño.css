@@ -1,0 +1,164 @@
+/* Estilo base */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f5f2;
+    color: #3b2f2f;
+}
+
+header {
+    text-align: center;
+    padding: 10px; /* Reducir padding */
+    background-color: #d2b48c;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: sticky; /* Esto hace que el encabezado quede fijo */
+    top: 0; /* Lo mantiene en la parte superior */
+    z-index: 10; /* Asegura que el encabezado esté encima de otros elementos */
+    transition: all 0.3s ease; /* Transición suave para cambios */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem; /* Reducir tamaño del título */
+}
+
+header p {
+    font-size: 1rem; /* Reducir tamaño de la descripción */
+    margin-top: 5px; /* Reducir el margen superior */
+}
+
+/* Reducir el tamaño del título cuando haga scroll */
+header.shrink h1 {
+    font-size: 1.5rem; /* Título más pequeño al hacer scroll */
+}
+
+/* Galería de imágenes */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background-color: #fffaf0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    width: 250px;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: scale(1.1) rotateY(10deg) rotateX(5deg);
+}
+
+.image-container {
+    overflow: hidden;
+    border-bottom: 4px solid #8b4513;
+}
+
+.image-container img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.card:hover .image-container img {
+    transform: scale(1.2);
+}
+
+.card h2 {
+    font-size: 1.6rem; /* Reducir tamaño del título de la carta */
+    margin: 15px 0;
+    color: #8b4513; /* Marrón oscuro */
+}
+
+.card p {
+    font-size: 1rem;
+    margin: 10px;
+    padding: 0 10px;
+    color: #5c4033;
+}
+
+.btn {
+    display: inline-block;
+    margin: 5px 0 10px; /* Ajustar espaciado */
+    padding: 5px 10px; /* Botón más pequeño */
+    background-color: #d2b48c; /* Color suave que no sobresalga */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9rem; /* Texto más pequeño */
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #8b4513; /* Destaca solo al pasar el mouse */
+}
+
+/* Cuando el tamaño de la pantalla es pequeño */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem; /* Hacer el título más pequeño en pantallas más pequeñas */
+    }
+
+    header.shrink h1 {
+        font-size: 1.4rem; /* Más pequeño aún al hacer scroll */
+    }
+
+    .gallery {
+        padding: 10px;
+    }
+}
+
+/* Estilo para el footer */
+footer {
+    text-align: center;
+    padding: 10px 20px; /* Reducir padding */
+    background-color: #d2b48c;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+footer .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Reducir espacio entre los iconos */
+    margin-bottom: 5px; /* Reducir el espacio debajo de los iconos */
+}
+
+footer .social-icons a {
+    display: block;
+    font-size: 1.2rem; /* Reducir tamaño de los iconos */
+    color: white;
+    transition: color 0.3s ease;
+}
+
+footer .social-icons a:hover {
+    color: #8b4513; /* Cambio de color al pasar el ratón */
+}
+
+/* Estilo base para el pie de página */
+footer .Autor {
+    text-align: center;
+    padding: 5px;
+    background-color: #333;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.8rem; /* Reducir tamaño de fuente del autor */
+    margin-top: 5px; /* Separar un poco del bloque de iconos */
+}
+
+
